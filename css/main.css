@@ -293,6 +293,7 @@ div#education {
 	.project {
 		border: 1px solid white;
 	}
+
 	h1 {
 		font-size: 2rem;
 		line-height: 5rem;
@@ -324,5 +325,9 @@ div#education {
 
 	.nav a {
 		font-size: 0.75rem;
+	}
+
+	section {
+		margin-top: 100px;
 	}
 }
