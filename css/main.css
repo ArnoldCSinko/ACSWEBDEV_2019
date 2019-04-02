@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Exo+2:400,700");
+:root {
+	--header-width: 150px;
+	--mobile-header-height: 80px;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -10,11 +14,13 @@ body {
 
 h1 {
 	font-size: 5rem;
-	line-height: 5.5rem;
+	line-height: 5rem;
+	text-transform: uppercase;
+	color: #0d47a1;
 }
 
 h1 span {
-	color: #0d47a1;
+	color: white;
 }
 
 h2 {
@@ -29,12 +35,14 @@ p {
 	max-width: 500px;
 	color: black;
 }
-
+ul {
+	color: #0d47a1;
+}
 section {
 	padding: 0;
 	margin: 0;
-	height: 100vh;
-	width: 100%;
+	min-height: 100vh;
+	max-width: 100vw;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -55,7 +63,7 @@ section {
 }
 
 .main-container {
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 	padding: 0;
 	margin: 0;
@@ -68,8 +76,8 @@ section {
 	flex-direction: column;
 	background: black;
 	justify-content: space-between;
-	height: 100%;
-	width: 200px;
+	height: 100vh;
+	width: var(--header-width);
 	z-index: 1;
 	position: fixed;
 	top: 0;
@@ -120,7 +128,7 @@ section {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	margin-left: 200px;
+	margin-left: var(--header-width);
 	padding: 0;
 	font-size: 28px;
 	background: url("../images/background-large.jpg")
@@ -145,17 +153,18 @@ section {
 	display: flex;
 	flex-direction: column;
 	border: 1px solid black;
-	transition: all 0.4s linear;
+	transition: all 0.5s linear;
 }
 
 .project:hover {
-	cursor: pointer;
+	cursor: default;
 	border-color: white;
 }
 
 .project p {
 	padding: 5px;
 }
+
 .project-img-container {
 	width: 90%;
 	align-self: center;
@@ -187,17 +196,9 @@ section {
 		font-size: 3rem;
 		line-height: 5rem;
 	}
-	.main-container#project-page {
-		height: 100%;
-		min-height: 100vh;
-	}
 
-	.content {
-		background: black;
-	}
-
-	section {
-		height: 100%;
+	.projects {
+		width: 100%;
 	}
 }
 
@@ -206,12 +207,8 @@ section {
 		width: 100%;
 		margin: 0;
 		padding: 50px;
-		background: black;
-		color: white;
 	}
-	.project {
-		border-color: #1565c0;
-	}
+
 	.project p {
 		color: white;
 	}
@@ -221,11 +218,15 @@ section {
 		line-height: 5rem;
 	}
 
+	p {
+		font-size: 1.35rem;
+	}
+
 	.main-container {
 		display: flex;
 		flex-direction: column;
 		width: 100vw;
-		height: 100vh;
+		max-height: 100vh;
 		padding: 0;
 		margin: 0;
 	}
@@ -235,7 +236,7 @@ section {
 		flex-direction: row;
 		background: black;
 		justify-content: space-evenly;
-		height: 150px;
+		height: var(--mobile-header-height);
 		width: 100vw;
 		z-index: 1;
 		position: fixed;
@@ -267,7 +268,8 @@ section {
 		padding: 0;
 	}
 	section {
-		margin-top: 150px;
+		padding-top: 50px;
+		max-height: 100vh;
 	}
 }
 
@@ -289,18 +291,13 @@ section {
 		flex-direction: column;
 		padding: 0;
 		margin: 0;
+		max-height: 100vh;
 	}
 
 	.content {
 		padding: 0;
 		margin: 0;
-	}
-
-	.header {
-		height: 140px;
-		display: flex;
-		flex-direction: column;
-		padding: 2px 0;
+		max-height: 100vh;
 	}
 
 	.image-container {
@@ -308,10 +305,10 @@ section {
 	}
 
 	.nav a {
-		font-size: 1.25rem;
+		font-size: 1.05rem;
 	}
 
 	section {
-		margin-top: 140px;
+		height: 100vh;
 	}
 }
